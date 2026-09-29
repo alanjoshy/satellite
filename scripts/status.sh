@@ -1,9 +1,24 @@
-#!//bin/bash 
+#!/bin/bash
 
-echo "satelite ground station" 
-echo "========================="
-echo "Status: Running"
-echo "Hostname: $(hostname)"
-echo "Date: $(date)"
-echo "hostname: $(hostname)" 
-echo "Date: $(date)"
+source "./scripts/common.sh"
+
+echo
+echo "======================================"
+echo "     $STATION_NAME"
+echo "======================================"
+
+echo "Hostname : $(hostname)"
+echo "Date     : $(date)"
+echo "User     : $(whoami)"
+echo
+
+echo "Directories:"
+echo "  Raw data       : $RAW_DIR"
+echo "  Processed data : $PROCESSED_DIR"
+echo "  Logs           : $LOG_DIR"
+
+echo
+echo "Disk usage: $(df -h .)"
+
+echo
+log "INFO" "Station status checked"
